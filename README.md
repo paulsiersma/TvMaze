@@ -11,6 +11,8 @@ When the project is started, the scraper starts calling the TvMaze API. To avoid
 This means it takes about 10 seconds for the first data to be queryable from the API endpoint. 
 Data will be continually added in the background and become available for the API. 
 
+Another thing is that I planned on doing bulk updates to the database. However, I kept running into EF Core exceptions related to duplicate entity tracking. So in the end I decided to store shows with its actors one at a time. This means that, in retrospect, I would make more sense to do an API call and immediately store the result. Now you know why it is not like that.  
+
 I radically simplified the pagination to save time, IRL this could be a lot more fully featured, but I felt I spent enough time. 
 
 ## To run it:
